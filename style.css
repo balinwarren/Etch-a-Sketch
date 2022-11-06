@@ -18,7 +18,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px;
+}
+
+#size-value {
+  margin: 10px 0 0 0;
+}
+
+#size-slider {
+  margin: 0 0 20px 0;
+  width: 80px;
 }
 
 .grid-container {
