@@ -64,6 +64,17 @@ body {
   font-size: 16px;
 }
 
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 #color-picker {
   width: 80px;
   height: 80px;
