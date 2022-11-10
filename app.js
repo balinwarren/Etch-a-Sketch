@@ -60,7 +60,17 @@ function generateGrid() {
 function colorGrid(x) {
   if (x.type === "mouseover" && !mouseDown){
     return
-  } x.target.style.backgroundColor = currentColor;
+  } 
+  if (currentMode === "color-mode") {
+    x.target.style.backgroundColor = currentColor;
+  } else if (currentMode === "eraser-mode") {
+    x.target.style.backgroundColor = "#e5e7eb";
+  } else {
+    const R = Math.floor(Math.random() * 256);
+    const G = Math.floor(Math.random() * 256);
+    const B = Math.floor(Math.random() * 256);
+    x.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+  }
 }
 
 function setCurrentMode(newMode) {
