@@ -8,7 +8,8 @@ let sliderListener = document.getElementById("size-slider").addEventListener("in
 let gridChange = document.getElementById("size-slider").addEventListener("change", generateGrid);
 let colorListener = document.getElementById("color-picker").addEventListener("change", colorChange);
 
-let currentColor = document.getElementById("color-picker").value;
+let currentColor = DEFCOLOR;
+let currentMode = DEFMODE;
 
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
@@ -20,6 +21,9 @@ const eraserMode = document.getElementById("eraser-mode");
 const clear = document.getElementById("clear");
 
 clear.onclick = () => generateGrid();
+colorMode.onclick = () => setCurrentMode("color-mode");
+rainbowMode.onclick = () => setCurrentMode("rainbow-mode");
+eraserMode.onclick = () => setCurrentMode("eraser-mode");
 
 generateGrid();
 
@@ -57,4 +61,15 @@ function colorGrid(x) {
   if (x.type === "mouseover" && !mouseDown){
     return
   } x.target.style.backgroundColor = currentColor;
+}
+
+function setCurrentMode(newMode) {
+  document.getElementById(currentMode).classList.remove('active');
+  currentMode = newMode;
+  document.getElementById(newMode).classList.add('active');
+}
+
+window.onload = () => {
+  generateGrid();
+  setCurrentMode(DEFMODE);
 }

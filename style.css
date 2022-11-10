@@ -44,7 +44,7 @@ body {
   gap: 40px;
 }
 
-#color-mode, #rainbow-mode, #eraser-mode, #clear {
+button {
   background-color: #e5e7eb;
   border: 1px solid rgb(20, 20, 20);
   border-radius: 10px;
@@ -54,14 +54,9 @@ body {
   font-size: 16px;
 }
 
-.active {
+button.active {
   background-color: rgb(20, 20, 20);
-  border: 1px solid rgb(20, 20, 20);
-  border-radius: 10px;
-  height: 50px;
-  width: 160px;
   color: #e5e7eb;
-  font-size: 16px;
 }
 
 button,
